@@ -1,4 +1,4 @@
-angular.module('ayremovil', ['ionic', 'ayremovil.controllers'])
+angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
