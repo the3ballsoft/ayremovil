@@ -1,8 +1,8 @@
 describe('Navegacion y seguridad', function(){
-  var URLnoRegistrada = 'localhost:8100/noregistrada';
+  var URLnoRegistrada = 'http://localhost:8100/noregistrada';
 
   it('Debe redireccionar / a /#/login', function() {
-    browser.get('localhost:8100/');
+    browser.get('http://localhost:8100/');
     browser.getLocationAbsUrl().then(function(url) {
         expect(url.split('#')[1]).toBe('/login');
       });
@@ -19,14 +19,14 @@ describe('Navegacion y seguridad', function(){
 
 describe('Vista de Login', function() {
   beforeEach(function() {
-    browser.get('localhost:8100/#/login');
+    browser.get('http://localhost:8100/#/login');
   });
-
+});
 
 describe('Funciones de login', function() {
 
   beforeEach(function() {
-    browser.get('localhost:8100/#/login');
+    browser.get('http://localhost:8100/#/login');
   });
 
   it('Login correcto', function() {
