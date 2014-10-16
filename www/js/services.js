@@ -65,6 +65,28 @@ angular.module('ayremovil.services', [])
     }
   };
 
+})
+.factory('Matricula', function($http) {
+  var apiUrl = 'http://ayremovil.herokuapp.com/matricula_academica?codigo=';
+
+  var matricula = undefined;
+
+  var handleError = function(data){
+    return "Error consultado matricula";
+  };
+
+  return {
+    get: function(callback){
+      var registro = JSON.parse(window.localStorage.getItem("loginDetails")).codigo;
+   
+      var request = $http({
+                        method: "get",
+                        url: apiUrl+registro,
+                    });
+      request.success(callback).error(handleError);
+    }
+  };
+
 });
    
  

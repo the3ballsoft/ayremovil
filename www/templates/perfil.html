@@ -13,22 +13,31 @@
             <div class="item">
                 <h2>{{estudiante.nombres}} {{estudiante.apellidos}}</h2>
                 <p>C.C {{estudiante.identificacion}}<br/>
-                Estudiante: {{estudiante.estado}}
+                Estado: {{estudiante.estado}}<br>
+                Situacion Academica: {{ estudiante.situacionAcademica }}
                 </p>
             </div>
             <label class="item item-input">
-			  <span class="input-label">Programa</span>
-			  {{estudiante.programa.nombre }}
-			</label>
-			<label class="item item-input">
-			  <span class="input-label">Codigo</span>
-			  {{estudiante.codigo}}
-			</label>
+      			  <span class="input-label">Programa</span>
+      			  {{estudiante.programa.nombre }}
+      			</label>
+      			<label class="item item-input">
+      			  <span class="input-label">Codigo</span>
+      			  {{estudiante.codigo}}
+      			</label>
 
-			<label class="item item-input">
-			  <span class="input-label">Email</span>
-			  {{estudiante.email}}
-			</label>
+      			<label class="item item-input">
+      			  <span class="input-label">Email</span>
+      			  {{estudiante.email}}
+      			</label>
+            <label class="item item-input">
+              <span class="input-label">Prom. Ponderado</span>
+              {{estudiante.promedioPonderado}}
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Prom. Semestral</span>
+              {{estudiante.promedioSemestral}}
+            </label>
 
 			<div class="item">
                 <strong>Suf. Ingles: <i ng-show="estudiante.sufIngles" class="verde icon ion-checkmark-round"></i><i class="rojo icon ion-close-round" ng-show="!estudiante.sufIngles"></i>  </strong>
