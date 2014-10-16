@@ -26,6 +26,23 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
           controller: 'LoginCtrl'
         }
       }
+    })
+
+    .state('app', {
+      url: "/app",
+      abstract: true,
+      templateUrl: "templates/menu.html",
+      controller: 'AppCtrl'
+    })
+
+    .state('app.perfil', {
+      url: "/perfil",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/perfil.html",
+          controller: 'PerfilCtrl'
+        }
+      }
     });
 
   // si ningun estado coincide se hace la siguiente redireccion

@@ -1,0 +1,49 @@
+<ion-view title="Perfil">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <!-- <ion-content class="has-header">
+    <h1>Perfil</h1>
+  </ion-content> -->
+   <ion-content class="has-header">
+        <div class="list card">
+        	<div align="center" class="item item-body">
+                <img src="http://graph.facebook.com/1093666333/picture?width=160&height=160" width="160" height="160" />
+            </div>
+            <div class="item">
+                <h2>{{estudiante.nombres}} {{estudiante.apellidos}}</h2>
+                <p>C.C {{estudiante.identificacion}}<br/>
+                Estudiante: {{estudiante.estado}}
+                </p>
+            </div>
+            <label class="item item-input">
+			  <span class="input-label">Programa</span>
+			  {{estudiante.programa.nombre }}
+			</label>
+			<label class="item item-input">
+			  <span class="input-label">Codigo</span>
+			  {{estudiante.codigo}}
+			</label>
+
+			<label class="item item-input">
+			  <span class="input-label">Email</span>
+			  {{estudiante.email}}
+			</label>
+
+			<div class="item">
+                <strong>Suf. Ingles: <i ng-show="estudiante.sufIngles" class="verde icon ion-checkmark-round"></i><i class="rojo icon ion-close-round" ng-show="!estudiante.sufIngles"></i>  </strong>
+                 
+                <strong>Pre-Practica: <i ng-show="estudiante.prePractica" class="verde icon ion-checkmark-round"></i><i ng-show="!estudiante.prePractica" class="rojo icon ion-close-round"></i>  </strong>
+                  
+                <strong>Biblioteca: <i class="verde icon ion-checkmark-round" ng-show="estudiante.biblioteca"></i><i ng-show="!estudiante.biblioteca"class="rojo icon ion-close-round"></i></strong>
+<hr>   
+                <strong>Cartera: <i ng-show="estudiante.cartera" class="verde icon ion-checkmark-round"></i><i ng-show="!estudiante.cartera" class="rojo icon ion-close-round"></i>  </strong>
+                  
+                <strong>Clinica: <i ng-show="estudiante.clinica" class="verde icon ion-checkmark-round"></i><i ng-show="!estudiante.clinica" class="rojo icon ion-close-round"></i>  </strong>
+   
+                <strong>Laboratorios: <i ng-show="estudiante.laboratorios" class="verde icon ion-checkmark-round"></i><i  ng-show="!estudiante.laboratorios" class="rojo icon ion-close-round"></i></strong>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

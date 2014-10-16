@@ -10,3 +10,15 @@ body{
 .scroll-content {
     background-color: #00335e;
  }
+.rojo{
+	color: red;
+}
+.verde {
+	color: green;
+}
+.imgMenu {
+	padding: 0;
+	padding-left: 29%;
+	margin: 0;
+	max-height: 80%
+}
