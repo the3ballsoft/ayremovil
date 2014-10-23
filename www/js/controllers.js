@@ -11,9 +11,8 @@ angular.module('ayremovil.controllers', [])
   			if(data.msg === "true"){
   				window.localStorage.setItem("loginDetails", JSON.stringify(
 		  		{   "fecha": new Date(),
-		  			"codigo": codigo
+		  			  "codigo": codigo
 		  		}));
-		  		// console.log(window.localStorage.getItem("loginDetails"))
 		  		$window.location='#/app/perfil';
   			}
   			
@@ -72,20 +71,5 @@ angular.module('ayremovil.controllers', [])
       return $scope.shownGroup === group;
     };  
 
-      
-
-      
-
-
-      // $scope.toggleGroup = function(group) {
-      //   if($scope.isGroupShown(group)) {
-      //     $scope.shownGroup = null;
-      //   }else {
-      //     $scope.shownGroup = group;
-      //   }
-      // };
-      // $scope.isGroupShown = function(group) {
-      //   return $scope.shownGroup === group;
-      // };
   });
 
