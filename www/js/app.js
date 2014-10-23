@@ -53,6 +53,15 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
           controller: 'HorarioCtrl'
         }
       }
+    })
+    .state('app.notas', {
+      url: "/notas",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/notas.html",
+          controller: 'NotasCtrl'
+        }
+      }
     });
 
   // si ningun estado coincide se hace la siguiente redireccion

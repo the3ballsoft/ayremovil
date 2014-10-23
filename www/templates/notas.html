@@ -1,0 +1,44 @@
+<ion-view title="Notas">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+ 
+   <ion-content class="has-header">
+      <div class="list card">
+        <div ng-repeat="dia in dias">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(dia)"
+                    ng-class="{active: isGroupShown(dia)}">
+              <i class="icon" ng-class="isGroupShown(dia) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            {{ dia.nombre }}
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-repeat="clase in dia.clases"
+                    ng-show="isGroupShown(asignatura)">
+
+                    <div class="item">
+                      <h2>Docente: {{asignatura.docente}}</h2>
+                    </div>
+                    <label class="item item-input">
+                    <span class="input-label">Seg 1</span>
+                    {{ clase.seg1 }}
+                    </label>
+                    
+                    <label class="item item-input">
+                      <span class="input-label">Seg 2</span>
+                      {{ clase.seg2 }}
+                    </label>
+                    <label class="item item-input">
+                      <span class="input-label">Seg 3</span>
+                      {{ clase.seg3 }}
+                    </label>
+                    <label class="item item-input">
+                      <span class="input-label">Total</span>
+                      {{ clase.seg1 + clase.seg2 + clase.seg3 }}
+                    </label>
+          </ion-item>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>
