@@ -53,7 +53,19 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
           controller: 'HorarioCtrl'
         }
       }
+    })
+
+    .state('app.sabana', {
+      url: "/sabana",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/sabana.html",
+          controller: 'SabanaCtrl'
+        }
+      }
     });
+
+
 
   // si ningun estado coincide se hace la siguiente redireccion
   $urlRouterProvider.otherwise('/login');
