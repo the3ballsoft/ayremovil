@@ -54,15 +54,27 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
         }
       }
     })
+
     .state('app.notas', {
       url: "/notas",
       views: {
         'menuContent' :{
           templateUrl: "templates/notas.html",
           controller: 'NotasCtrl'
+       } 
+     }
+    })
+    .state('app.historial', {
+      url: "/historial",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/historial.html",
+          controller: 'HistorialCtrl'
         }
       }
     });
+
+
 
   // si ningun estado coincide se hace la siguiente redireccion
   $urlRouterProvider.otherwise('/login');
