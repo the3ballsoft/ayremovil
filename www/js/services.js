@@ -88,6 +88,8 @@ angular.module('ayremovil.services', [])
   };
 
 })
+
+
 .factory('Horario', function($http) {
   
 
@@ -230,8 +232,89 @@ var datosReglamento = [
     }
   };
 
-});
+})
    
- 
-                   
+.factory('Historial', function($http) {
+
+var Dmatricula = [
+  {
+    "nombre": "20121",
+    "materias": [
+      {
+        "materia": "Calculo I",
+        "definitiva": "420",
+        "creditos": "3"
+      },
+      {
+        "materia": "Mecanica",
+        "definitiva": "380",
+        "creditos": "3"
+      },
+      {
+        "materia": "Estadistica",
+        "definitiva": "275",
+        "creditos": "3"
+      },
+      {
+        "materia": "Ingles",
+        "definitiva": "320",
+        "creditos": "2"
+      },
+      {
+        "materia": "Region y Contexto",
+        "definitiva": "460",
+        "creditos": "2"
+      },
+      {
+        "materia": "Universidad y Sociedad",
+        "definitiva": "430",
+        "creditos": "1"
+      }
+
+    ]
+  },
+  {
+    "nombre": "20122",
+    "materias": [
+      {
+        "materia": "Sistemas Operativos",
+        "definitiva": "350",
+        "creditos": "3"
+      },
+      {
+        "materia": "Estructuras de Datos",
+        "definitiva": "360",
+        "creditos": "1"
+      },
+      {
+        "materia": "Calculo II",
+        "definitiva": "330",
+        "creditos": "3"
+      },
+      {
+        "materia": "Electricidad y Magnetismo",
+        "definitiva": "387",
+        "creditos": "3"
+      },
+      {
+        "materia": "Matematicas Discretas",
+        "definitiva": "240",
+        "creditos": "3"
+      },
+      {
+        "materia": "Teoria y Filosofia del Conocimiento",
+        "definitiva": "390",
+        "creditos": "3"
+      }
+    ]
+  }
+]
+  return {
+    get: function(){
+      return Dmatricula;
+    }
+  };
+
+
+ });                  
  
