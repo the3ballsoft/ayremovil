@@ -35,7 +35,9 @@ body{
 .list .item.item-accordion.ng-hide-remove {
   display: block !important;
 }
-
+.button{
+	line-height: 24px;
+}
 .btnMenu{
 	width: 100%;
 	padding: 20px;
@@ -44,6 +46,12 @@ body{
 .btnMenu .icon:before, .button.icon:before{
 	font-size: 58px;
 }
+
+.iframe-issue {
+    -webkit-overflow-scrolling: touch !important;
+    overflow: scroll !important;
+  }
+
 /*.wrapping-list .item-content, .wrapping-list .item {
     overflow: initial;
     white-space: initial;
