@@ -17,7 +17,7 @@
                     ng-repeat="materia in periodo.materias"
                     ng-show="isGroupShown(periodo)">
 
-                    <div class="item">
+                    <div class="item" ng-class="estaAprobada(materia.definitiva) ? 'item-balanced': 'item-assertive'">
                       <h2>{{materia.materia}}</h2>
                     </div>
 

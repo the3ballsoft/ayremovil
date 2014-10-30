@@ -238,7 +238,7 @@ var datosReglamento = [
 
 var Dmatricula = [
   {
-    "nombre": "20121",
+    "nombre": "2012-I",
     "materias": [
       {
         "materia": "Calculo I",
@@ -274,7 +274,7 @@ var Dmatricula = [
     ]
   },
   {
-    "nombre": "20122",
+    "nombre": "2012-II",
     "materias": [
       {
         "materia": "Sistemas Operativos",

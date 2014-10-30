@@ -95,16 +95,22 @@ angular.module('ayremovil.controllers', [])
                     "salon": data[i].horario[k].salon
                   }
                   $scope.dias[j].clases.push(clase);
-
                 }
               }
             };
-          
-
         }
         console.log($scope.dias);
-        $scope.loadingIndicator.hide();
-    
+        
+
+        for(var i=0;i<$scope.dias.length;i++){
+          if ($scope.dias[i].clases.length === 0) {
+            $scope.dias.splice(i, 1);
+            i--;
+          }
+        }
+        // for(var i=0;i<diasLibres.length;i++){
+        //   $scope.dias.splice(diasLibres[i], 1);
+        // }
    
     /*
      * Si tiene una materia seleccionada, la deselecciona para abrir
@@ -121,7 +127,7 @@ angular.module('ayremovil.controllers', [])
       return $scope.shownGroup === group;
 
     };   
-
+    $scope.loadingIndicator.hide();
   })
  .controller('NotasCtrl', function($scope, Matricula, $stateParams, $ionicLoading) {
       
@@ -136,8 +142,7 @@ angular.module('ayremovil.controllers', [])
 
         console.log(data);
         $scope.asignaturas = [];
-        $scope.dias = [{"dia":"lunes","clases":[]},{"dia":"martes","clases":[]}, {"dia":"miercoles","clases":[]},{"dia":"jueves","clases":[]}, {"dia":"viernes","clases":[]}, {"dia":"sabado","clases":[]}];
-
+       
 
        //se crea el arbol para la lista en acordeon
         for (var i=0; i<data.length; i++) {
@@ -154,21 +159,6 @@ angular.module('ayremovil.controllers', [])
           $scope.asignaturas[i].docente = data[i].docente;
           $scope.asignaturas[i].clases.push(notas);
 
-            for (var k = 0; k < data[i].horario.length; k++) {
-              for (var j = 0; j < $scope.dias.length; j++) {
-                if( data[i].horario[k].dia == $scope.dias[j].dia){
-                  var clase ={
-                    "docente": data[i].docente,
-                    "nombre": data[i].materia.nombre,
-                    "hora": data[i].horario[k].hora,
-                    "dia": data[i].horario[k].dia,
-                    "salon": data[i].horario[k].salon
-                  }
-                  $scope.dias[j].clases.push(clase);
-
-                }
-              }
-            };
         }
         console.log($scope.dias);
         $scope.loadingIndicator.hide();
@@ -206,6 +196,14 @@ angular.module('ayremovil.controllers', [])
     $scope.periodos = data;
     
     console.log($scope.periodos);
+    $scope.estaAprobada = function(nota){
+       if(nota >= 300){
+          return true;
+       }else{
+         return false;
+       }
+    };
+
     $scope.toggleGroup = function(group) {
       if ($scope.isGroupShown(group)) {
         $scope.shownGroup = null;
