@@ -44,7 +44,7 @@ body{
 .btnMenu .icon:before, .button.icon:before{
 	font-size: 58px;
 }
-.wrapping-list .item-content, .wrapping-list .item {
+/*.wrapping-list .item-content, .wrapping-list .item {
     overflow: initial;
     white-space: initial;
-}
+}*/
