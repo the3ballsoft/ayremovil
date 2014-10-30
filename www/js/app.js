@@ -35,6 +35,16 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
       controller: 'AppCtrl'
     })
 
+    .state('app.noticias', {
+      url: '/noticias',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/noticias.html',
+          controller: 'NoticiasCtrl'
+        }
+      }
+    })
+    
     .state('app.perfil', {
       url: "/perfil",
       views: {
@@ -70,6 +80,15 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
         'menuContent' :{
           templateUrl: "templates/historial.html",
           controller: 'HistorialCtrl'
+        }
+      }
+    })
+    .state('app.herramientas', {
+      url: "/herramientas",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/herramientas.html",
+          controller: 'HerramientasCtrl'
         }
       }
     });

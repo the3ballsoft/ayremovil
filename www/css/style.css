@@ -35,3 +35,12 @@ body{
 .list .item.item-accordion.ng-hide-remove {
   display: block !important;
 }
+
+.btnMenu{
+	width: 100%;
+	padding: 20px;
+}
+
+.btnMenu .icon:before, .button.icon:before{
+	font-size: 58px;
+}
