@@ -41,7 +41,7 @@ angular.module('ayremovil.controllers', [])
       });
     $scope.loadingIndicator.hide();
   })
-  
+
   .controller('PerfilCtrl', function($scope, Estudiante, $stateParams, $ionicLoading) {
   		$scope.loadingIndicator = $ionicLoading.show({
         content: 'Cargando',
@@ -208,6 +208,32 @@ angular.module('ayremovil.controllers', [])
         maxWidth: 200
       });
     $scope.loadingIndicator.hide();
+})
+
+.controller('DirectorioCtrl', function($scope, $stateParams, $ionicLoading) {
+    $scope.loadingIndicator = $ionicLoading.show({
+        content: 'Cargando',
+        animation: 'fade-in',
+        maxWidth: 200
+      });
+    $scope.loadingIndicator.hide();
+})
+
+.controller('ManualCtrl', function($scope, $stateParams, Manual) {
+    $scope.contenido = Manual.get();
+    console.log($scope.contenido);
+
+    $scope.toggleGroup = function(group) {
+      if ($scope.isGroupShown(group)) {
+        $scope.shownGroup = null;
+      } else {
+        $scope.shownGroup = group;
+      }
+    };
+    $scope.isGroupShown = function(group) {
+      return $scope.shownGroup === group;
+
+    };
 });
 
 

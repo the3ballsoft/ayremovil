@@ -164,6 +164,72 @@ var Dmatricula = [
     }
   };
 
+})
+
+.factory('Manual', function($http) {
+  
+
+var datosReglamento = [
+  {
+    "titulo" : "DE LOS PRINCIPIOS GENERALES",
+    "articulos" : [
+      {
+         "nombre" : "ARTICULO 1",
+         "contenido": "Los principios consagrados en el Proyecto Educativo Institucional constituyen la base para la interpretación del reglamento estudiantil de la UNIVERSIDAD DEL MAGDALENA, como una institución de servicio público que en cumplimiento de su función social, se consolida como un centro de ciencia y cultura que promueve el contacto de los estudiantes con las expresiones culturales, artística, estéticas, deportivas, académicas y científicas; orientando todos los procesos hacia la formación humana integral de ciudadanos habilitados para el ejercicio profesional en las diferentes áreas del saber , tal como se define en su misión institucional.",
+      },
+      {
+         "nombre" : "ARTICULO 2",
+         "contenido": "Dentro de los limites de la Constitución y la Ley, la Universidad es autónoma para: desarrollar sus programas académicos y de extensión; designar su personal, organización y gobierno. Es de su propia naturaleza el ejercicio libre y responsable de la cátedra, el aprendizaje, la investigación y la controversia ideológica y política.",
+      },
+      {
+         "nombre" : "ARTICULO 3",
+         "contenido": "El proceso de formación debe desarrollarse dentro de claros criterios éticos y académicos, de tal forma que se dé un clima favorable donde impere la razón, el mutuo respeto por la función humana y social de la educación superior, así como una actitud de sana crítica que estimule la búsqueda permanente de nuevas expresiones de la ciencia, la cultura y el arte.",
+      },
+    ]       
+  },
+  {
+    "titulo" : "DEL CAMPO DE APLICACIÓN",
+    "articulos" : [
+      {
+         "nombre" : "ARTICULO 11",
+         "contenido": "El presente reglamento es aplicable a toda persona que tenga la calidad de estudiante en un Programa Académico de la Universidad del Magdalena. Será considerado Estudiante de la Universidad del Magdalena, toda persona que posea matrícula vigente en cualquiera de los Programas Académicos de la Universidad debidamente autorizados en las diferentes modalidades educativas.",
+      },
+      {
+         "nombre" : "ARTICULO 12",
+         "contenido": "La calidad de estudiante se adquiere mediante el acto voluntario de matrícula inicial en un programa académico de la Universidad debidamente autorizado.",
+      },
+      {
+         "nombre" : "ARTICULO 13",
+         "contenido": " ",
+      },
+    ]    
+  },
+  {
+    "titulo" : "DEL INGRESO A LA UNIVERSIDAD",
+    "articulos" : [
+      {
+         "nombre" : "ARTICULO 14",
+         "contenido": "Inscripción es el acto mediante el cual un aspirante solicita ser admitido a un programa académico ofrecido por la Universidad.",
+      },
+      {
+         "nombre" : "ARTICULO 15",
+         "contenido": "",
+      },
+      {
+         "nombre" : "ARTICULO 16",
+         "contenido": "",
+      },
+    ]     
+  }
+];
+
+
+  return {
+    get: function(){
+      return datosReglamento;
+    }
+  };
+
 });
    
  

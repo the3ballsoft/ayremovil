@@ -44,7 +44,7 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
         }
       }
     })
-    
+
     .state('app.perfil', {
       url: "/perfil",
       views: {
@@ -91,8 +91,25 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
           controller: 'HerramientasCtrl'
         }
       }
+    })
+    .state('app.directorio', {
+      url: "/herramientas/directorio",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/herramientas/directorio.html",
+          controller: 'DirectorioCtrl'
+        }
+      }
+    })
+    .state('app.manual', {
+      url: "/herramientas/manual",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/herramientas/manual.html",
+          controller: 'ManualCtrl'
+        }
+      }
     });
-
 
 
   // si ningun estado coincide se hace la siguiente redireccion
