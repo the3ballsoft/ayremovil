@@ -5,7 +5,33 @@
  
    <ion-content class="has-header">
       <div class="list card">
+      	<div ng-repeat="periodo in periodos">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(periodo)"
+                    ng-class="{active: isGroupShown(periodo)}">
+              <i class="icon" ng-class="isGroupShown(periodo) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            {{periodo.nombre}}
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-repeat="materia in periodo.materias"
+                    ng-show="isGroupShown(periodo)">
 
+                    <div class="item">
+                      <h2>{{materia.materia}}</h2>
+                    </div>
+
+                    <label class="item item-input">
+                    <span class="input-label">Creditos</span>
+                    {{materia.creditos}}
+                    </label>
+                    
+                    <label class="item item-input">
+                      <span class="input-label">Definitiva</span>
+                      {{materia.definitiva}}
+                    </label>
+          </ion-item>
+        </div>
       </div>
     </ion-content>
 </ion-view>
