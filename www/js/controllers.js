@@ -219,6 +219,9 @@ angular.module('ayremovil.controllers', [])
     $scope.loadingIndicator.hide();
 })
 
+.controller('CalendarioCtrl', function($scope, $stateParams, $ionicLoading) {
+   
+})
 .controller('ManualCtrl', function($scope, $stateParams, Manual) {
     $scope.contenido = Manual.get();
     console.log($scope.contenido);

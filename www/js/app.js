@@ -83,6 +83,7 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
         }
       }
     })
+
     .state('app.herramientas', {
       url: "/herramientas",
       views: {
@@ -92,6 +93,7 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
         }
       }
     })
+
     .state('app.directorio', {
       url: "/herramientas/directorio",
       views: {
@@ -100,7 +102,19 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
           controller: 'DirectorioCtrl'
         }
       }
+
     })
+    
+    .state('app.calendario', {
+      url: "/herramientas/calendario",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/herramientas/calendario.html",
+          controller: 'CalendarioCtrl'
+        }
+      }
+    })
+
     .state('app.manual', {
       url: "/herramientas/manual",
       views: {
@@ -111,7 +125,7 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
       }
     });
 
-
+// onclick="window.open('http://www.nraboy.com/contact', '_system', 'location=yes'); return false;"
   // si ningun estado coincide se hace la siguiente redireccion
   $urlRouterProvider.otherwise('/login');
 
