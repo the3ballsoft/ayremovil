@@ -34,12 +34,7 @@ angular.module('ayremovil.controllers', [])
   })
 
   .controller('NoticiasCtrl', function($scope, $stateParams, $ionicLoading) {
-    $scope.loadingIndicator = $ionicLoading.show({
-        content: 'Cargando',
-        animation: 'fade-in',
-        maxWidth: 200
-      });
-    $scope.loadingIndicator.hide();
+    // window.open(encodeURI('http://k-rudy.github.io/phonegap-twitter-timeline?527894966077358080'), '_self', 'location=no');
   })
 
   .controller('PerfilCtrl', function($scope, Estudiante, $stateParams, $ionicLoading) {

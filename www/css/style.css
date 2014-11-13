@@ -50,7 +50,7 @@ body{
 .iframe-issue {
     -webkit-overflow-scrolling: touch !important;
     overflow: scroll !important;
-  }
+ }
 
 /*.wrapping-list .item-content, .wrapping-list .item {
     overflow: initial;
