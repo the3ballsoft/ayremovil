@@ -257,7 +257,7 @@ angular.module('ayremovil.controllers', [])
 })
 
 .controller('CalculadoraCtrl', function($scope, Matricula, $stateParams, $ionicLoading) {
-   $scope.valido = true;
+      $scope.mat1_sg1 = 0;
 
       $scope.loadingIndicator = $ionicLoading.show({
         content: 'Cargando',
@@ -268,7 +268,7 @@ angular.module('ayremovil.controllers', [])
       Matricula.get(function(data){
         
 
-        console.log(data);
+        //console.log(data);
         $scope.asignaturas = [];
        
 
@@ -277,6 +277,8 @@ angular.module('ayremovil.controllers', [])
 
           $scope.asignaturas[i] = {
             name: data[i].materia.nombre,
+            id: i,
+            creditos: data[i].materia.creditos, 
             clases: []
           };
           notas = {
@@ -288,7 +290,13 @@ angular.module('ayremovil.controllers', [])
           $scope.asignaturas[i].clases.push(notas);
 
         }
-        console.log($scope.dias);
         $scope.loadingIndicator.hide();
+
+        console.log($scope.asignaturas);
       });
+
+      $scope.calcular = function () {
+            //$scope.mat1_total = $scope.mat1_sg1+$scope.mat1_sg2+$scope.mat1_sg3;
+            console.log("aca "+$scope.mat1_sg1);
+      }
 });

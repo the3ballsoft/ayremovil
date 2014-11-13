@@ -6,46 +6,50 @@
   
   <ion-content>
   	<div class="list">
+      
+      <item ng-repeat="asignatura in asignaturas" type="item-text-wrap" href="#">
+              <div class="card">
+                <div class="item item-divider">
+                  {{asignatura.name}}
+                  <span class="item-note">
+                    Creditos: {{asignatura.creditos}}
+                  </span>
+                </div>
+                
+                <div class="row">
+                  <div class="col">
+                    <label class="item item-input item-stacked-label noborder">
+                      <span class="input-label">Seg 1</span>
+                      <input ng-model="mat1_sg1" type="text" placeholder="0">
+                    </label>
+                  </div>
+                  <div class="col">
+                    <label class="item item-input item-stacked-label noborder">
+                      <span class="input-label">Seg 2</span>
+                      <input ng-model='mat1_sg2' type="text" placeholder="0">
+                    </label>
+                  </div>
+                  <div class="col">
+                    <label class="item item-input item-stacked-label noborder">
+                      <span class="input-label">Seg 3</span>
+                      <input ng-model="mat1_sg3" type="text" placeholder="0">
+                    </label>
+                  </div>
+                </div>
+                <div class="item item-divider">
+                <a ng-click="calcular()" class="item item-icon-left calcularbtn">
+                  <i class="icon ion-gear-a"></i>
+                  Calcular
+                  <span class="item-note">
+                    Total: 387
+                  </span>
+                </a>
+                </div>
 
-      <div class="card">
-        <div class="item item-divider">
-          Materia 1
-          <span class="item-note">
-            Creditos: 4
-          </span>
-        </div>
-        
-        <div class="row">
-          <div class="col">
-            <label class="item item-input item-stacked-label noborder">
-              <span class="input-label">Seg 1</span>
-              <input type="text" placeholder="121">
-            </label>
-          </div>
-          <div class="col">
-            <label class="item item-input item-stacked-label noborder">
-              <span class="input-label">Seg 2</span>
-              <input type="text" placeholder="125">
-            </label>
-          </div>
-          <div class="col">
-            <label class="item item-input item-stacked-label noborder">
-              <span class="input-label">Seg 3</span>
-              <input type="text" placeholder="172">
-            </label>
-          </div>
-        </div>
-        <div class="item item-divider">
-        <a href="#" class="item item-icon-left calcularbtn">
-          <i class="icon ion-gear-a"></i>
-          Calcular
-          <span class="item-note">
-            Total: 387
-          </span>
-        </a>
-          
-        </div>
-      </div>
+              </div>
+      </item>
+
+
 
     </div>
   </ion-content>
