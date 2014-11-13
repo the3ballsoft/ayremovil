@@ -4,20 +4,13 @@
   </ion-nav-buttons>
  
   
-  <ion-content scroll="true" overflow-scroll="true" class="has-header">
-  <!-- 	<iframe id="noticiasFrame" src="http://k-rudy.github.io/phonegap-twitter-timeline/?527894966077358080" style="width:100%; height:100%;"> -->
-<iframe id="noticiasFrame" src="http://the3ballsoft.com" style="width:100%; height:100%;"> 
-  	<!-- <a class="button button-positive" onclick="window.open(encodeURI('http://k-rudy.github.io/phonegap-twitter-timeline?527929505201926144'), '_blank', 'location=no');">noticias</a> -->
-  </ion-content>
-  <!-- https://twitter.com/unimagdalena -->
-	<!-- <div class="tabs tabs-top tabs-icon-top">
-	  <a class="tab-item active">
-	    <i class="icon ion-android-checkmark"></i>
-	    Oficial
-	  </a>
-	  <a class="tab-item">
-	    <i class="icon ion-social-twitter"></i>
-	    #Social
-	  </a>
-	</div> -->
+  	<ion-content class="has-header">
+	  <div ng-repeat="noticia in noticias" class="list card item-text-wrap">
+	  	<div class="item item-divider item-positive">
+                <i class="icon ion-speakerphone"></i> {{noticia.title}}
+            </div>
+	  	<p ng-bind-html="noticia.content" class="padding"></p>
+
+	  </div>
+	</div>
 </ion-view>

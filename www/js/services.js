@@ -76,6 +76,15 @@ angular.module('ayremovil.services', [])
 
 })
 
+.factory('Noticias', function($http) {
+  var url = 'http://www.queryfeed.net/twitter?q=unimagdalena&geocode=&omit-direct=on';
+  return {
+        get : function(){
+            return $http.jsonp('//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q='+ encodeURIComponent(url));
+        }
+    };
+
+})
 
 .factory('Horario', function($http) {
   

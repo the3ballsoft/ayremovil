@@ -123,6 +123,16 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
           controller: 'ManualCtrl'
         }
       }
+    })
+
+    .state('app.calculadora', {
+      url: "/herramientas/calculadora",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/herramientas/calculadora.html",
+          controller: 'CalculadoraCtrl'
+        }
+      }
     });
 
 // onclick="window.open('http://www.nraboy.com/contact', '_system', 'location=yes'); return false;"
