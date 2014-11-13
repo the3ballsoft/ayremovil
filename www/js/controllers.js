@@ -254,4 +254,41 @@ angular.module('ayremovil.controllers', [])
       return $scope.shownGroup === group;
 
     };
+})
+
+.controller('CalculadoraCtrl', function($scope, Matricula, $stateParams, $ionicLoading) {
+   $scope.valido = true;
+
+      $scope.loadingIndicator = $ionicLoading.show({
+        content: 'Cargando',
+        animation: 'fade-in',
+        maxWidth: 200
+      });
+
+      Matricula.get(function(data){
+        
+
+        console.log(data);
+        $scope.asignaturas = [];
+       
+
+       //se crea el arbol para la lista en acordeon
+        for (var i=0; i<data.length; i++) {
+
+          $scope.asignaturas[i] = {
+            name: data[i].materia.nombre,
+            clases: []
+          };
+          notas = {
+            seg1: parseInt(data[i].seg1),
+            seg2: parseInt(data[i].seg2),
+            seg3: parseInt(data[i].seg3)
+          }
+          $scope.asignaturas[i].docente = data[i].docente;
+          $scope.asignaturas[i].clases.push(notas);
+
+        }
+        console.log($scope.dias);
+        $scope.loadingIndicator.hide();
+      });
 });
