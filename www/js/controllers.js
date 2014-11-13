@@ -11,7 +11,7 @@ angular.module('ayremovil.controllers', [])
 
   		Auth.login(codigo, password, function(data){
   			if(data.msg === "false"){
-          $scope.loadingIndicator.hide();
+          $ionicLoading.hide();
   				alert("Contraseña invalida!");
   				return;
   			}
@@ -20,7 +20,7 @@ angular.module('ayremovil.controllers', [])
 		  		{   "fecha": new Date(),
 		  			  "codigo": codigo
 		  		}));
-          $scope.loadingIndicator.hide();
+          $ionicLoading.hide();
 		  		$window.location='#/app/perfil';
   			}
   			
@@ -33,13 +33,19 @@ angular.module('ayremovil.controllers', [])
 
   })
 
-  .controller('NoticiasCtrl', function($scope, $stateParams, $ionicLoading) {
+  .controller('NoticiasCtrl', function($scope, Noticias, $stateParams, $ionicLoading) {
     $scope.loadingIndicator = $ionicLoading.show({
         content: 'Cargando',
         animation: 'fade-in',
+        noBackdrop: true,
         maxWidth: 200
       });
-    $scope.loadingIndicator.hide();
+
+    Noticias.get().then(function(tweets){
+      $ionicLoading.hide();
+      $scope.noticias = (tweets.data.responseData.feed.entries);
+        console.log($scope.noticias);
+    });
   })
 
   .controller('PerfilCtrl', function($scope, Estudiante, $stateParams, $ionicLoading) {
@@ -53,7 +59,7 @@ angular.module('ayremovil.controllers', [])
       Estudiante.get(function(data){
   			console.log(data);
   			$scope.estudiante = data;
-        $scope.loadingIndicator.hide();
+        $ionicLoading.hide();
   		});
   })
   .controller('HorarioCtrl', function($scope, Horario, $stateParams, $ionicLoading) {
@@ -127,7 +133,7 @@ angular.module('ayremovil.controllers', [])
       return $scope.shownGroup === group;
 
     };   
-    $scope.loadingIndicator.hide();
+    $ionicLoading.hide();
   })
  .controller('NotasCtrl', function($scope, Matricula, $stateParams, $ionicLoading) {
       
@@ -161,7 +167,7 @@ angular.module('ayremovil.controllers', [])
 
         }
         console.log($scope.dias);
-        $scope.loadingIndicator.hide();
+        $ionicLoading.hide();
       });
    
     /*
@@ -188,7 +194,7 @@ angular.module('ayremovil.controllers', [])
         animation: 'fade-in',
         maxWidth: 200
       });
-    $scope.loadingIndicator.hide();
+    $ionicLoading.hide();
 
     var data = Historial.get(data);
     //console.log(data);
@@ -224,7 +230,7 @@ angular.module('ayremovil.controllers', [])
         animation: 'fade-in',
         maxWidth: 200
       });
-    $scope.loadingIndicator.hide();
+    $ionicLoading.hide();
 })
 
 .controller('DirectorioCtrl', function($scope, $stateParams, $ionicLoading) {
@@ -233,7 +239,7 @@ angular.module('ayremovil.controllers', [])
         animation: 'fade-in',
         maxWidth: 200
       });
-    $scope.loadingIndicator.hide();
+    $ionicLoading.hide();
 })
 
 .controller('CalendarioCtrl', function($scope, $stateParams, $ionicLoading) {
@@ -289,9 +295,11 @@ angular.module('ayremovil.controllers', [])
           $scope.asignaturas[i].clases.push(notas);
 
         }
-        $scope.loadingIndicator.hide();
-
+        
+        $ionicLoading.hide();
+        console.log($scope.dias);
         console.log($scope.asignaturas);
+
       });
 
       $scope.calcular = function () {

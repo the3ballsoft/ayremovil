@@ -50,7 +50,9 @@ body{
 .iframe-issue {
     -webkit-overflow-scrolling: touch !important;
     overflow: scroll !important;
-  }
+
+ }
+
   .noborder{
   	border-width:0;
   }
