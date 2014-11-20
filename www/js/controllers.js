@@ -1,6 +1,10 @@
 angular.module('ayremovil.controllers', [])
 
  .controller('LoginCtrl', function($scope, Auth, $window, $ionicLoading) {
+    //Datos de desarrollo
+    $scope.codigo = '2010114051';
+    $scope.password = '123456';
+
   	$scope.login = function (codigo, password){
 
       $scope.loadingIndicator = $ionicLoading.show({
@@ -307,4 +311,51 @@ angular.module('ayremovil.controllers', [])
             console.log("aca "+ this.mat1_total);
             $scope.mat1_total = "saf";
       }
+})
+
+.controller('UbicaionesCtrl', function($scope, $stateParams, $ionicLoading, $compile) {
+     console.log("entro");
+     //google.maps.event.addDomListener(window, 'load', function() {
+
+        var myLatlng = new google.maps.LatLng(11.225067, -74.1852413);
+ 
+        var mapOptions = {
+            center: myLatlng,
+            zoom: 17,
+            mapTypeId: google.maps.MapTypeId.SATELLITE
+        };
+ 
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+ 
+        /*
+        navigator.geolocation.getCurrentPosition(function(pos) {
+            map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+            var myLocation = new google.maps.Marker({
+                position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+                map: map,
+                title: "My Location"
+            });
+        });
+*/
+ 
+        $scope.map = map;
+
+        $scope.centerOnMe = function() {
+        if(!$scope.map) {
+          return;
+        }
+
+        $scope.loading = $ionicLoading.show({
+          content: 'Getting current location...',
+          showBackdrop: false
+        });
+
+        navigator.geolocation.getCurrentPosition(function(pos) {
+          $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+          $scope.loading.hide();
+        }, function(error) {
+          alert('Unable to get location: ' + error.message);
+        });
+      };
+    //});
 });

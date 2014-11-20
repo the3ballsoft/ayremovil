@@ -133,7 +133,18 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
           controller: 'CalculadoraCtrl'
         }
       }
+    })
+
+    .state('app.ubicaciones', {
+      url: "/herramientas/ubicaciones",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/herramientas/ubicaciones.html",
+          controller: 'UbicaionesCtrl'
+        }
+      }
     });
+
 
 // onclick="window.open('http://www.nraboy.com/contact', '_system', 'location=yes'); return false;"
   // si ningun estado coincide se hace la siguiente redireccion

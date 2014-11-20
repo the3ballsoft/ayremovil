@@ -63,6 +63,15 @@ body{
   	padding-bottom: 2px;
   }
 
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll {
+  height: 100%;
+}
+
 /*.wrapping-list .item-content, .wrapping-list .item {
     overflow: initial;
     white-space: initial;
