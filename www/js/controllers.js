@@ -66,19 +66,55 @@ angular.module('ayremovil.controllers', [])
         $ionicLoading.hide();
   		});
   })
-  .controller('HorarioCtrl', function($scope, Horario, $stateParams, $ionicLoading) {
+  .controller('HorarioCtrl',function($scope, Horario, $stateParams, $ionicLoading, $ionicModal,$cordovaLocalNotification) {
         $scope.loadingIndicator = $ionicLoading.show({
           content: 'Cargando',
           animation: 'fade-in',
           maxWidth: 200
         });
 
+      $scope.min = 0;
+      $scope.notificacion= false;
+      $scope.activar = function(hora,Objetoclase){
+      
+      alert('implementar notificacion '+Objetoclase.hora+' minutos antes de la clase');
+      $scope.notificacion=true;
+      $scope.pushNotification = { checked: true };
+      console.log(clase.hora); 
+  };
+
+      
+
+ // $scope.addNotification = function () {
+ //    var notify = new Date();
+ //        notify.setHours(16,52,00,00);
+
+ //    $cordovaLocalNotification.add({
+ //       id:      1,
+ //    title:   'My app',
+ //    message: 'Hi this is a notification',
+ //    repeat:  'daily',
+ //    date:    notify,
+ //    autoCancel: true, 
+ //    ongoing: true,
+ //    }).then(function () {
+ //      console.log('callback for adding background notification');
+ //    });
+ //  };
+  
+     $scope.pushNotificationChange = function() {
+      console.log('Push Notification Change', $scope.pushNotification.checked);
+     
+     };
+  
+   
+
         data = Horario.get();
         
         $scope.asignaturas = [];
         $scope.dias = [{"dia":"lunes","clases":[]},{"dia":"martes","clases":[]}, {"dia":"miercoles","clases":[]},{"dia":"jueves","clases":[]}, {"dia":"viernes","clases":[]}, {"dia":"sabado","clases":[]}];
 
-
+         
        //se crea el arbol para la lista en acordeon
         for (var i=0; i<data.length; i++) {
 

@@ -1,4 +1,4 @@
-angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.services'])
+angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.services','ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -100,6 +100,16 @@ angular.module('ayremovil', ['ionic', 'ayremovil.controllers', 'ayremovil.servic
         'menuContent' :{
           templateUrl: "templates/herramientas/directorio.html",
           controller: 'DirectorioCtrl'
+        }
+      }
+
+    })
+     .state('app.notificaciones', {
+      url: "/herramientas/notificaciones",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/herramientas/notificaciones.html",
+          controller: 'HorarioCtrl'
         }
       }
 
